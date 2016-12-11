@@ -8,6 +8,7 @@
 
 # Perceptron implementation
 import util
+import random
 PRINT = True
 
 class PerceptronClassifier:
@@ -46,15 +47,20 @@ class PerceptronClassifier:
     # THE AUTOGRADER WILL LIKELY DEDUCT POINTS.
 
     for iteration in range(self.max_iterations):
+      print self.max_iterations
       print "Starting iteration ", iteration, "..."
       for i in range(len(trainingData)):
           "*** YOUR CODE HERE ***"
-          eta = 0.2
-          w = self.weights[trainingLabels]
-          t, expected = trainingData[i]
-          dotProd = dot(w, t)
-          error = expected - abs(dotProd)
-          w += eta * error * t
+          datum = trainingData[i]
+
+          guess = self.classify([datum])[0]
+
+          realNumbers = trainingLabels[i]
+
+          if(guess != realNumbers):
+            self.weights[realNumbers] += datum
+            self.weights[guess] -= datum
+
           ##util.raiseNotDefined()
 
   def classify(self, data ):
@@ -80,6 +86,6 @@ class PerceptronClassifier:
     featuresWeights = []
 
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    #util.raiseNotDefined()
 
     return featuresWeights
