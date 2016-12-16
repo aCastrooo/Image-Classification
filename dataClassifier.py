@@ -75,7 +75,6 @@ def enhancedFeatureExtractorDigit(datum):
 
   for y in range(DIGIT_DATUM_HEIGHT):
       for x in range(DIGIT_DATUM_WIDTH):
-        for z in range(5)
           features[('r',y)] += 1 if table[(x,y)] > 0 else 0
 
   for x in range(DIGIT_DATUM_WIDTH):
