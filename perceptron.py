@@ -50,11 +50,14 @@ class PerceptronClassifier:
       print self.max_iterations
       print "Starting iteration ", iteration, "..."
       for i in range(len(trainingData)):
-          "*** YOUR CODE HERE ***"
+
+          """The actual data"""
           datum = trainingData[i]
 
+          """Classify guesses"""
           guess = self.classify([datum])[0]
 
+          """This is what the number actually is"""
           realNumbers = trainingLabels[i]
 
           if(guess != realNumbers):
