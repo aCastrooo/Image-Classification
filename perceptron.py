@@ -64,8 +64,6 @@ class PerceptronClassifier:
             self.weights[realNumbers] += datum
             self.weights[guess] -= datum
 
-          ##util.raiseNotDefined()
-
   def classify(self, data ):
     """
     Classifies each datum as the label that most closely matches the prototype vector
