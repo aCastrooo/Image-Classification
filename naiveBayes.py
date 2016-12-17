@@ -99,9 +99,9 @@ class NaiveBayesClassifier(classificationMethod.ClassificationMethod):
 
     """
 
-    self.kval = .001 if len(self.legalLabels) > 2 else .00001
+    self.kval = .05 if len(self.legalLabels) > 2 else .00001
     #.00001 best for faces
-    #.001 best for digits
+    #.05, .01, .001 best for digits
     #[0.001, 0.01, 0.05, 0.1, 0.5, 1, 5, 10, 20, 50]
 
 
