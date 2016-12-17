@@ -106,8 +106,6 @@ class NaiveBayesClassifier(classificationMethod.ClassificationMethod):
 
 
 
-    #util.raiseNotDefined()
-
   def classify(self, testData):
     """
     Classify the data based on the posterior distribution over labels.
@@ -133,7 +131,6 @@ class NaiveBayesClassifier(classificationMethod.ClassificationMethod):
     """
     logJoint = util.Counter()
 
-    "*** YOUR CODE HERE ***"
 
     for label in self.legalLabels:
         logJoint[label] = math.log(self.labelProbs[label])
