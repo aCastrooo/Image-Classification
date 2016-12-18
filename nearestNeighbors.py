@@ -38,7 +38,7 @@ class NNClassifier:
 			accurate = self.howAccurate(testLabels, predictions)
 			print "Predicted: " + repr(predict) + " Actual: " + repr(testLabels[x])
 
-		print "Accuracy: " + repr(accurate)
+		print "Accuracy: " + repr(accurate) + "%"
 
 
 	def EuclideanDistance(self, dataOne, dataTwo, length):
@@ -80,3 +80,12 @@ class NNClassifier:
 
 		sortedLabels = sorted(labels.iteritems(), key=operator.itemgetter(1), reverse=True)
 		return sortedLabels[0][0]
+
+
+	def howAccurate(self, testLabels, predictions):
+		correct = 0
+		for x in range(len(predictions)):
+			if testLabels[x] == predictions[x]:
+				correct += 1
+
+		return (correct / float(len(testLabels))) * 100
