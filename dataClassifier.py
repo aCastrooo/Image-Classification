@@ -17,6 +17,8 @@ import nearestNeighbors
 import samples
 import sys
 import util
+import time
+start_time = time.time()
 
 TEST_SET_SIZE = 100
 DIGIT_DATUM_WIDTH=28
@@ -392,3 +394,4 @@ if __name__ == '__main__':
   args, options = readCommand( sys.argv[1:] )
   # Run classifier
   runClassifier(args, options)
+  print("--- %s seconds ---" % (time.time() - start_time))
